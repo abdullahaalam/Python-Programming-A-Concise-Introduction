@@ -145,7 +145,9 @@ newEngland = ["Maine","New Hampshire","Vermont", "Rhode Island",
 "Massachusetts","Connecticut"]
 
 def problem2_3(ne):
-    pass # replace this pass (a do-nothing) statement with your code
+    for i in range(0, len(ne)):
+        print(ne[i], "has", len(ne[i]), "letters.")
+
 
     
 #%%
@@ -161,8 +163,12 @@ import random
 
 def problem2_4():
     """ Make a list of 10 random reals between 30 and 35 """
-    random.seed()
-    pass # replace this pass (a do-nothing) statement with your code
+    random.seed(70)
+    num_lis = []
+    for i in range(10):
+        n = (random.random() * 5 + 30)
+        num_lis.append(n)
+    print(num_lis)
 
 #%%
 """
@@ -218,7 +224,8 @@ def problem2_5():
     # Setting the seed makes the random numbers always the same
     # This is to make the auto-grader's job easier.
     random.seed(171)  # don't remove when you submit for grading
-    pass # replace this pass (a do-nothing) statement with your code
+    for i in range(10):
+        print(random.randint(1,6))
 
 #%%
 """
@@ -238,6 +245,7 @@ def problem2_6():
     # This is to make the auto-grader's job easier.
     random.seed(431)  # don't remove when you submit for grading
     pass # replace this pass (a do-nothing) statement with your code
+    
 
    
 #%%
@@ -301,6 +309,7 @@ def problem2_7():
     """ computes area of triangle using Heron's formula. """
     pass # replace this pass (a do-nothing) statement with your code
     
+    
 #%%
 """ 
 Problem 2_8:
@@ -321,7 +330,13 @@ hourly_temp = [40.0, 39.0, 37.0, 34.0, 33.0, 34.0, 36.0, 37.0, 38.0, 39.0, \
                36.0, 35.0, 33.0, 32.0]
 #%%
 def problem2_8(temp_list):
-    pass # replace this pass (a do-nothing) statement with your code
+    sum = 0
+    for i in range(0, len(temp_list)):
+        sum = sum+temp_list[i]
+    average = sum/len(temp_list)
+    print("Average:",average)
+    print("High:",max(temp_list))
+    print("Low:",min(temp_list))
         
     
 #%%
