@@ -26,9 +26,23 @@ There are 141 letters in the file.
 
 """
 #%%
-def problem3_1(txtfilename):
-    pass # replace this pass (a do-nothing) statement with your code
+def problem3_1(txtfilename):    
     """ Opens file and prints its contents line by line. """
+    infile = open(txtfilename)
+    
+    sum = 0
+    
+    for line in infile:
+        sum = sum + len(line)
+        print(line, end="") # the file has "\n" at the end of each line already
+        
+    print("\n\nThere are", sum, "letters in the file.")
+    
+    infile.close()
+   
+    
+    
+    
 
     
     
@@ -114,7 +128,13 @@ function will confuse Python and will have to be more complex to work. ***
 def problem3_3(month, day, year):
     """ Takes date of form mm/dd/yyyy and writes it in form June 17, 2016 
         Example6: problem3_5(6, 17, 2016) gives June 17, 2016 """
-    pass # replace this pass (a do-nothing) statement with your code
+
+    months = ("January", "February", "March", "April", "May", "June", "July", \
+              "August", "September", "October", "November", "December")
+    monthStr = int(month) - 1
+    print(months[monthStr], str(day) + ",", year)
+    
+
 #%%
 """
 Problem 3_4:
@@ -135,6 +155,9 @@ problem3_4("July",17, 2016)
 def problem3_4(mon, day, year):
     """ Takes date such as July 17, 2016 and write it as 7/17/2016 """
     pass # replace this pass (a do-nothing) statement with your code
+
+
+    
 
 #%%
 """    
@@ -160,6 +183,8 @@ def problem3_5(name):
     phone_numbers = {"abbie":"(860) 123-4535", "beverly":"(901) 454-3241", \
                       "james": "(212) 567-8149", "thomas": "(795) 342-9145"}
     pass # replace this pass (a do-nothing) statement with your code
+
+
 
 #%%
 """
@@ -190,7 +215,23 @@ C:>type humptylength.txt
 31
 44
 35
+"""
+import sys
 
+infile = sys.argv[1]
+outfile = sys.argv[2]
+
+infile = open(infile)
+outfile = open(outfile, 'w')
+
+for line in infile:
+    line = line.strip("\n")
+    outfile.write(str(len(line)) + "\n")
+
+infile.close()
+outfile.close()
+
+"""
 Problem 3_7:
 Write a function that would read a CSV file that looks like this, flowers.csv:
 
@@ -209,7 +250,8 @@ problem3_7("flowers.csv","alyssum")
 Solution starter:
 """
 #%%
+import csv
 def problem3_7(csv_pricefile, flower):
     pass # replace this pass (a do-nothing) statement with your code
-    
+
 #%%
