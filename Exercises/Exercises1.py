@@ -319,12 +319,12 @@ def fahrenheit_to_celsius2():
     Uses 'if' to make sure an entry was made.
     """
     
-    temp_str = input("Enter a Fahrenheit temperature: ")
+    temp_str = input("Enter a Fahrenheit temperature:")
     if temp_str:
         temp = int(temp_str)
         newTemp = 5*(temp-32)/9
         print("The Fahrenheit temperature",temp,"is equivalent to ",end='')
-        print(newTemp,"degrees Celsius")
+        print(newTemp,"in degrees Celsius")
 
 #%%
 """
